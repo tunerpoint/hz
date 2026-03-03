@@ -41,6 +41,7 @@ header {
    padding: 8px;
    text-align: center;
    flex-shrink: 0;
+   
 }
 
 /* ========================= */
@@ -164,13 +165,7 @@ legend {
    font-size: 1rem;
 }
 
-.web-notes-iframe {
-   width: 100%;
-   height: 260px;
-   border: none;
-   border-radius: 10px;
-   margin-top: 4px;
-}
+
 
 /* ========================= */
 /* RIGHT PANEL (RSS) */
@@ -307,22 +302,40 @@ footer {
    -ms-overflow-style: none;
 }
 
+#live-datetime {
+  
+   top: 8px;
+   left: 12px;
+   font-size: 0.85rem;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+   color: #ffffffcc;
+}
+
+nav button a {
+   color: inherit;
+   text-decoration: none;
+}
 </style>
 
 </head>
 
 <body>
       <header>
-         <h1>
+         <div id="live-datetime"></div>
+         <div>
+            <h1>
             THE TUNER 
-         </h1>
-         <p>At the Resonant Point</p>
+            </h1>
+            <p>Live in Resonance</p>
+         </div>
+         
       </header>
 
       <nav>
-         <button>Home</button>
-         <button>About</button>
-         <button>Projects</button>
+         <button><a href="index.html">Home</a></button>
+         <button><a href="web-notes.html">Web Notes</a></button>
+         <button><a href="https://benareshnaik.github.io/note/">Handwriting</a></button>
       </nav>
 
       <main>  
@@ -352,14 +365,7 @@ footer {
                         </a>
                      </div>
 
-                     <div class="card">
-                        <a href="web-notes.html">
-                           <h3>Take Quick Web Notes</h3>
-                        </a>
-                        <iframe class="web-notes-iframe" src="web-notes.html" frameborder="0" scrolling="no">
-                        </iframe>
-                     </div>
-
+                     
                      <div class="card">
                         <a href="https://benareshnaik.github.io/note/">
                               <h3>
@@ -371,13 +377,7 @@ footer {
                         </a>
                      </div>
 
-                     <div class="card">
-                        <a href="https://benareshnaik.github.io/note/">
-                           <h3>Writedown Quick Web Notes</h3>
-                        </a>
-                        <iframe class="web-notes-iframe" src="https://benareshnaik.github.io/note/" frameborder="0" scrolling="no">
-                        </iframe>
-                     </div>
+                     
                
             </fieldset>
 
@@ -400,7 +400,34 @@ footer {
             This Website is developed by Naresh B
          </p>
       </footer>
+<script>
+function updateDateTime() {
+   const now = new Date();
 
-</body>
+   const dateOptions = {
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+   };
+
+   const timeOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+   };
+
+   const dateString = now.toLocaleDateString('en-IN', dateOptions);
+   const timeString = now.toLocaleTimeString('en-IN', timeOptions);
+
+   document.getElementById("live-datetime").textContent =
+      dateString + " | " + timeString;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+   </body>
 
 </html>

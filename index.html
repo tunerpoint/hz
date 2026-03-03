@@ -5,6 +5,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>The Tuner</title>
+   <meta
+name="description"
+content="The Attuner is a space where ideas find resonance and clarity - a place to think clearly write intentionally, and live in resonance with inner frequency."/>
+
+
+   <link rel="manifest" href="manifest.json">
  <style>
 
 /* ========================= */
@@ -321,6 +327,14 @@ nav button a {
 </head>
 
 <body>
+
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
+
       <header>
          <div id="live-datetime"></div>
          <div>
@@ -334,8 +348,8 @@ nav button a {
 
       <nav>
          <button><a href="index.html">Home</a></button>
-         <button><a href="web-notes.html">Web Notes</a></button>
-         <button><a href="https://benareshnaik.github.io/note/">Handwriting</a></button>
+         <button><a href="https://ai-tuner.github.io/notes/">Web Notes</a></button>
+         <button><a href="https://ai-tuner.github.io/note/">Handwriting</a></button>
       </nav>
 
       <main>  
@@ -344,7 +358,7 @@ nav button a {
                <legend>My World</legend>
                
                      <div class="card">
-                        <a href="https://benareshnaik.github.io/TED/">
+                        <a href="https://ai-tuner.github.io/TED/">
                               <h3>
                                  The Essential Dose
                               </h3> 
@@ -355,7 +369,7 @@ nav button a {
                      </div>
 
                      <div class="card">
-                        <a href="web-notes.html">
+                        <a href="https://ai-tuner.github.io/notes/">
                               <h3>
                                  Take Quick Web Notes while browsing
                               </h3>
@@ -367,7 +381,7 @@ nav button a {
 
                      
                      <div class="card">
-                        <a href="https://benareshnaik.github.io/note/">
+                        <a href="https://ai-tuner.github.io/note/">
                               <h3>
                                  Handwriting Note on Web
                               </h3>
@@ -397,7 +411,7 @@ nav button a {
 
       <footer>
          <p>
-            This Website is developed by Naresh Naik B
+            This Website is developed by Naresh B
          </p>
       </footer>
 <script>
